@@ -28,11 +28,13 @@ namespace Chapter5_WinForms
 
         private void SetUserAgent()
         {
-            //Add a user-agent header to the GET request. 
+            //Add a user-agent header to all requests
             var headers = client.DefaultRequestHeaders;
 
             //The safe way to add a header value is to use the TryParseAdd method and verify the return value is true,
             //especially if the header value is coming from user input.
+
+            // User agent examples for Chrome on various devices: https://developer.chrome.com/multidevice/user-agent
             string header = "Mozilla/5.0 (Linux; Android 4.0.4; Galaxy Nexus Build/IMM76B) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19";
             if (!headers.UserAgent.TryParseAdd(header))
             {

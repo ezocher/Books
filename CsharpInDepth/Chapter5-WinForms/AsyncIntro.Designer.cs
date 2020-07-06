@@ -89,7 +89,7 @@
             this.Controls.Add(this.buttonLoadPage);
             this.Controls.Add(this.labelStatus);
             this.Name = "AsyncIntro";
-            this.Text = "Form1";
+            this.Text = "AsyncIntro from C# In Depth";
             this.ResumeLayout(false);
             this.PerformLayout();
 

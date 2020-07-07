@@ -22,24 +22,23 @@ namespace Reference
         {
             if (group.Contains(other)) return;
 
-            double newAmountPerContainer = ((amount * group.Count) + (other.amount * other.group.Count)) / (group.Count + other.group.Count);
-            foreach (Container container in other.group)
-                this.group.Add(container);
+            double newAmount = ((amount * group.Count) + (other.amount * other.group.Count)) / (group.Count + other.group.Count);
+            group.UnionWith(other.group);
 
             foreach (Container container in group)
             {
-                container.amount = newAmountPerContainer;
+                container.amount = newAmount;
                 container.group = this.group;
             }
         }
 
         public void addOrRemoveWater(double amount)
         {
-            double newAmountPerContainer = (amount + (this.amount * group.Count))/ group.Count;
-            if (newAmountPerContainer < 0.0) newAmountPerContainer = 0.0;
+            double newAmount = (amount + (this.amount * group.Count))/ group.Count;
+            if (newAmount < 0.0) newAmount = 0.0;
 
             foreach (Container container in group)
-                container.amount = newAmountPerContainer;
+                container.amount = newAmount;
         }
     }
 }

@@ -6,7 +6,7 @@ namespace Reference
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            UseCase.RunUseCase();
         }
     }
 }

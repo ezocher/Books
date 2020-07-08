@@ -20,7 +20,8 @@ namespace Reference
 
         public void connectTo(Container other)
         {
-            if (group.Contains(other)) return;
+            // Check to see if these containers are already connected
+            if (this.group == other.group) return;
 
             double newAmount = ((amount * group.Count) + (other.amount * other.group.Count)) / (group.Count + other.group.Count);
             group.UnionWith(other.group);

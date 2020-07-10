@@ -6,7 +6,7 @@ namespace Reference
     {
         static void Main(string[] args)
         {
-            UseCase.RunUseCase();
+            UseCase.RunBookUseCase();
             Console.WriteLine("\n{0}\n", new string('-', 50));
             UseCase.RunUseCaseMultipleConnections();
         }

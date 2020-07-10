@@ -6,7 +6,7 @@ namespace Reference
 {
     public class UseCase
     {
-        public static void RunUseCase()
+        public static void RunBookUseCase()
         {
             Container a = new Container("a");
             Container b = new Container("b");

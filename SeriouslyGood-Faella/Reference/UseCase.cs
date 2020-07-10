@@ -14,15 +14,15 @@ namespace Reference
             Container d = new Container("d");
             Display.Containers("Part 1: ", a, b, c, d);
 
-            a.addOrRemoveWater(12);
-            d.addOrRemoveWater(8);
-            a.connectTo(b);
+            a.AddOrRemoveWater(12);
+            d.AddOrRemoveWater(8);
+            a.ConnectTo(b);
             Display.Containers("Part 2: ", a, b, c, d);
 
-            b.connectTo(c);
+            b.ConnectTo(c);
             Display.Containers("Part 3: ", a, b, c, d);
 
-            b.connectTo(d);
+            b.ConnectTo(d);
             Display.Containers("Part 4: ", a, b, c, d);
         }
 
@@ -32,27 +32,27 @@ namespace Reference
             Container d = new Container(), e = new Container(), f = new Container();
             Display.Containers("Step 1: ", a, b, c, d, e, f);
 
-            a.addOrRemoveWater(12);
-            d.addOrRemoveWater(18);
+            a.AddOrRemoveWater(12);
+            d.AddOrRemoveWater(18);
             Display.Containers("Step 2: ", a, b, c, d, e, f);
 
-            a.connectTo(b);
-            b.connectTo(c);
-            d.connectTo(e);
+            a.ConnectTo(b);
+            b.ConnectTo(c);
+            d.ConnectTo(e);
             Display.Containers("Step 3: ", a, b, c, d, e, f);
 
-            e.connectTo(d);
-            c.connectTo(a);
+            e.ConnectTo(d);
+            c.ConnectTo(a);
             Display.Containers("Step 4, multiple connections, should == Step 3: ", a, b, c, d, e, f);
 
-            f.connectTo(b);
+            f.ConnectTo(b);
             Display.Containers("Step 5: ", a, b, c, d, e, f);
 
-            d.connectTo(f);
+            d.ConnectTo(f);
             Display.Containers("Step 6: ", a, b, c, d, e, f);
 
-            a.connectTo(e);
-            a.connectTo(a);
+            a.ConnectTo(e);
+            a.ConnectTo(a);
             Display.Containers("Step 7, multiple connections, should == Step 6: ", a, b, c, d, e, f);
         }
 
